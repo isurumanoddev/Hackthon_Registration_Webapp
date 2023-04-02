@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends "main.html" %}
+{% load static %}
+
+
+{% block content %}
+
+	<section class="s2">
+		<div class="main-container">
+			<a href=""></a>
+			<h3 style="text-align: center;padding: 20px">User Login</h3>
+
+			<form id="form" method="POST">
+
+				{% csrf_token %}
+				<div>
+					<label id="label">Email</label>
+				<input class="input"  name="email" type="email" >
+				</div>
+
+
+				<label id="label">Password</label>
+				<input class="input" name="password" type="password" >
+
+
+				<input id="submit-btn" type="submit" value="Send">
+				<div class="already">
+					<label id="label">If you not registered yet ,</label>
+					<a id="link" href="{% url "register" %}">Register</a>
+				</div>
+
+			</form>
+		</div>
+	</section>
+
+
+{% endblock %}

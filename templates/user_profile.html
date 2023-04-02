@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% extends "main.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+	<section class="s1">
+		<div class="main-container">
+			<div class="intro-wrapper">
+				<div class="greeting-wrapper">
+
+					<div class="left-column">
+						<h2> {{ request.user.name }} </h2>
+						<img id="profile_pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxE_Q-OIHewjpZPVHcDIRWXFMRjJaRqyp_1g&usqp=CAU">
+					</div>
+
+					<div class="right-column">
+						<div id="preview-shadow">
+							<div id="preview">
+								<h3>What I Do</h3>
+								<p>{{ user.bio }}</p>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+
+
+
+		<section class="s2">
+		<div class="main-container">
+
+			<h4 style="text-align: center;padding: 20px"> My Registered Events</h4>
+
+			<div class="event-wrapper">
+				{% for event in registered_events %}
+					<div class="event">
+						<h4>{{ event.name }}</h4>
+
+						<label> Date  : {{ event.date|date }} </label>
+
+					</div>
+				{% endfor %}
+			</div>
+
+		</div>
+	</section>
+
+    <section class="s1">
+		<div class="main-container">
+
+			<h4 style="text-align: center;padding: 20px"> Submitted Events</h4>
+
+			<div class="event-wrapper">
+				{% for submission in submitted_events %}
+					<div class="event">
+                        <div class="update-box">
+                            <h4>{{ submission.event.name }}</h4>
+                        <a style="max-width: 400px" href="{% url "update-submission" submission.id %}" class="register-btn">Update Submission</a>
+                        </div>
+
+						<label> Details  : {{ submission.details }} </label><br/>
+						<label> Submitted Date  : {{ submission.submitted_date|date }} </label>
+
+					</div>
+				{% endfor %}
+			</div>
+
+		</div>
+	</section>
+
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends "main.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+	<section class="s1">
+		<div class="main-container">
+			<div class="intro-wrapper">
+				<div class="greeting-wrapper">
+					<h1>Welcome {{ request.user.name }} !</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="s2">
+		<div class="main-container">
+
+			<h3 style="text-align: center;padding: 20px">Events</h3>
+
+			<div class="event-wrapper">
+				{% for event in events %}
+					<a href="{% url "event-page" event.id %}">
+					<div class="event">
+						<h4>{{ event.name }}</h4>
+						<p>{{ event.description }}</p>
+						<label>Date : {{ event.date }}</label>
+
+					</div>
+					</a>
+				{% endfor %}
+			</div>
+
+		</div>
+	</section>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends "main.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+	<section class="s2">
+		<div class="main-container">
+			<a href=""></a>
+			<h3 style="text-align: center;padding: 20px">Hackathon Registration</h3>
+
+			<form id="form" method="POST">
+
+				{% csrf_token %}
+				<div class="confirm-box">
+					<a href="{% url "event-page" event.id %}" id="submit-btn">Back</a>
+
+					<input id="submit-btn" type="submit" value="Confirm ">
+				</div>
+
+
+			</form>
+		</div>
+	</section>
+
+
+
+
+
+
+{% endblock %}

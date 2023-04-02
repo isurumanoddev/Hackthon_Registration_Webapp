@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends "main.html" %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+
+    <section class="s2">
+        <div class="main-container">
+            <div style="margin-top: 15px">
+
+                <a href="{% url "home" %}" class="btn-links">Back</a>
+            </div>
+
+            <h3 style="text-align: center;padding: 20px">{{ event.name }}</h3>
+
+            <div class="event-wrapper">
+                <div class="event">
+
+                    <p>{{ event.description }}</p>
+                    <label>Date : {{ event.date }}</label>
+                    <div class="event-title">
+                        {% if registered %}
+                            <p class="registered" type="button" disabled>Already Registred</p>
+                        {% else %}
+                            <a href="{% url "event-registration" event.id %}"
+                               class="register-btn">Register {{ event.name }}</a>
+                        {% endif %}
+                        {% if submitted %}
+                            <p class="registered" type="button" disabled>Already submitted</p>
+                        {% else %}
+                            <a href="{% url "event-submission" event.id %}" class="register-btn"> Submission</a>
+                        {% endif %}
+                    </div>
+                    <div class="event-participants">
+                        <h5>Registered Participants</h5>
+                        {% for participant in participants %}
+                            <li>{{ participant.name }}</li>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+{% endblock %}
