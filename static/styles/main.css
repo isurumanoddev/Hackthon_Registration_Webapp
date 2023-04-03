@@ -312,26 +312,26 @@ li {
 }
 .user-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    column-gap: 20px;
 
 
 }
 .user-profile {
-
-
     border: 1px solid var(--mainBorderColor-light);
     border-radius: 20px;
     margin-bottom: 15px;
 }
 .profile-pic {
+    justify-content: center;
+    display: block;
+    border-radius: 50%;
 
-    width:1fr;
-    border-top-radius:20px ;
+    padding: 10px;
 }
 .user-name {
     text-align: center;
-   padding: 10px;
+   padding: 5px;
 }
 .register-btn {
 

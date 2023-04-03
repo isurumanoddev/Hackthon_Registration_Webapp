@@ -7,10 +7,18 @@ class User(AbstractUser):
     name = models.CharField(max_length=100, null=True)
     email = models.EmailField(unique=True, null=True)
     bio = models.TextField(null=True, blank=True)
-    # avatar =models.ImageField(null=True,blank=True)
+    avatar =models.ImageField(default="avatar.jpj")
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username"]
+
+    def imageURL(self):
+        try:
+            url = self.avatar.url
+        except:
+            url = ""
+
+        return url
 
 
 class Event(models.Model):
