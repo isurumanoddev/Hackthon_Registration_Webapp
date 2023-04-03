@@ -10,6 +10,7 @@ def home(request):
     participants = User.objects.all()
 
     events = Event.objects.all()
+
     context = {"participants": participants, "events": events}
     return render(request, "home.html", context)
 

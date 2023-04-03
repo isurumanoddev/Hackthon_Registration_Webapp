@@ -6,36 +6,58 @@
 {% block content %}
 
 
-	<section class="s1">
-		<div class="main-container">
-			<div class="intro-wrapper">
-				<div class="greeting-wrapper">
-					<h1>Welcome {{ request.user.name }} !</h1>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section class="s1">
+        <div class="main-container">
+            <div class="intro-wrapper">
+                <div class="greeting-wrapper">
+                    <h1>Welcome {{ request.user.name }} !</h1>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<section class="s2">
-		<div class="main-container">
+    <section class="s2">
+        <div class="main-container">
 
-			<h3 style="text-align: center;padding: 20px">Events</h3>
+            <h3 style="text-align: center;padding: 20px">Events</h3>
 
-			<div class="event-wrapper">
-				{% for event in events %}
-					<a href="{% url "event-page" event.id %}">
-					<div class="event">
-						<h4>{{ event.name }}</h4>
-						<p>{{ event.description }}</p>
-						<label>Date : {{ event.date }}</label>
+            <div class="event-wrapper">
+                {% for event in events %}
+                    <a href="{% url "event-page" event.id %}">
+                        <div class="event">
+                            <h3 class="title">{{ event.name }}</h3>
+                            <p class="description">{{ event.description }}</p>
+                            <p class="description">Registered Members : {{ event.participants.count }}</p>
+                            <div class="dates">
+                                <label>Start Date : {{ event.start_date }}</label>
+                                <label>Deadline : {{ event.end_date }}</label>
+                            </div>
 
-					</div>
-					</a>
-				{% endfor %}
-			</div>
 
-		</div>
-	</section>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+
+        </div>
+    </section>
+    <section class="s1">
+        <div class="main-container">
+
+            <h3 style="text-align: center;padding: 20px">Users</h3>
+
+            <div class="user-list">
+                {% for user in participants %}
+{#                    <a href="{% url "user-profile" user.id %}">#}
+                        <div class="user-profile">
+                            <h4>{{ user.name }}</h4>
+                        </div>
+{#                    </a>#}
+                {% endfor %}
+            </div>
+
+        </div>
+    </section>
 
 
 

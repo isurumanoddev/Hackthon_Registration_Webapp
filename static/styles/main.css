@@ -1,64 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+
 :root {
-    --mainColor: #15202B;
-    --secondaryColor: #192734;
-    --thirdColor: #f3f0f0;
+    --mainTextColor-light: #000;
+    --secondaryTextColor-light: rgb(51 51 51);
+    --mainLinkColor-light: #0da2b8;
+    --mainBorderColor-light: rgb(218, 218, 218);
+    --mainBgColor-light: rgb(249, 250, 251);
 
-    --borderColor: #164D56;
+    --mainTextColor-dark: #fff;
+    /* --secondaryTextColor-dark:#adb0b1; */
+    --secondaryTextColor-dark: #cbc8d0;
+    --mainLinkColor-dark: rgb(30, 190, 214);
+    --mainBorderColor-dark: #2b3031;
+    --mainBgColor-dark: #131415;
 
-    --mainText: #fff;
-    --secondaryText: #eeeeee;
-
-    --themeDotBorder: #FFF;
-
-    --previewBg: rgb(25, 39, 52, 0.8);
-    --previewShadow: #111921;
-
-
-    --buttonColor: #17a2b8;
-
-
+    --mainTextColor: var(--mainTextColor-dark);
+    --secondaryTextColor: var(--secondaryTextColor-dark);
+    --mainLinkColor: var(--mainLinkColor-dark);
+    --mainBorderColor: var(--mainBorderColor-dark);
+    --mainBgColor: var(--mainBgColor-dark);
 }
 
-
-html, body {
-    background-color: #192734;
-    padding: 0;
-    margin: 0;
+* {
+    font-family: 'Readex Pro', serif;
+    line-height: 1.9em;
+    box-sizing: border-box;
+    color: var(--mainTextColor);
     scroll-behavior: smooth;
 }
 
-body * {
-    transition: 0.3s;
+body {
+    background-color: var(--mainBgColor);
 }
 
-
-h1, h2, h3, h4, h5, h6, strong {
-    color: var(--mainText);
-    font-family: 'Russo One', sans-serif;
-    font-weight: 500;
-}
-
-p, li, span, label, input, textarea {
-    color: var(--secondaryText);
-    font-family: 'Roboto Mono', monospace;
-}
-
-a {
-    text-decoration: none;
-    font-family: 'Russo One', sans-serif;
-    color: var(--thirdColor);
-}
-
-ul {
-    list-style: none;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 h1 {
-    font-size: 56px;
+    font-size: 36px;
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 32px;
 }
 
 h3 {
@@ -69,13 +54,26 @@ h4 {
     font-size: 24px;
 }
 
-h5 {
-    font-size: 20px;
+
+p, span, small, li {
+    color: var(--secondaryTextColor);
+    font-size: 1em;
 }
 
-h6 {
-    font-size: 16px;
+small {
+    font-size: .8em;
 }
+
+a {
+    text-decoration: none;
+    color: var(--mainLinkColor);
+    font-weight: 500;
+}
+
+li {
+    line-height: 1.9em;
+}
+
 
 #logo {
     max-width: 200px;
@@ -85,11 +83,13 @@ h6 {
 
 
 .navigation-bar {
-    background-color: #213f3c;
-    height: 50px;
-    display: flex;
-    justify-content: center;
 
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid var(--mainBorderColor);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary);
 }
 
 .nav-link {
@@ -147,14 +147,14 @@ h6 {
 /*.dropdown:hover .dropbtn {background-color: #3e8e41;}*/
 
 .s1 {
-    background-color: var(--secondaryColor);
-    border-bottom: 1px solid var(--borderColor);
+    background-color: var(--mainBgColor-dark);
+    border-bottom: 1px solid var(--mainBorderColor-dark);
     overflow: auto;
 }
 
 .s2 {
-    background-color: var(--secondaryColor);
-    border-bottom: 1px solid var(--borderColor);
+    background-color: var(--mainBgColor-dark);
+    border-bottom: 1px solid var(--mainBorderColor-dark);
     overflow: auto;
 }
 
@@ -175,40 +175,14 @@ h6 {
 
 }
 
-/*.intro-wrapper {*/
-/*    background-color: var(--secondaryColor);*/
-/*    border: 1px solid var(--borderColor);*/
-/*    border-radius: 5px 5px 0 0;*/
-
-
-/*    -webkit-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);*/
-/*    -moz-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);*/
-/*    box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);*/
-
-/*    display: grid;*/
-/*    grid-template-columns: 1fr 1fr;*/
-/*    grid-template-areas:*/
-/*		'nav-wrapper nav-wrapper'*/
-/*		'left-column right-column';*/
-/*}*/
-
-
-.nav-wrapper {
-    border-radius: 5px 5px 0 0;
-    grid-area: nav-wrapper;
-    border-bottom: 1px solid var(--borderColor);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--mainColor);
-}
-
 #navigation a {
-    color: var(--mainText);
+    color: var(--secondaryTextColor);
 }
 
 
 #navigation {
+    display: flex;
+    justify-content: space-between;
     margin: 0;
     padding: 10px;
     margin-right: 50px;
@@ -221,19 +195,6 @@ h6 {
     padding: 0 25px;
 }
 
-
-#navigation img {
-    display: inline-block;
-    margin-right: 5px;
-    margin-left: 5px;
-
-}
-
-#social-logo {
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-}
 
 .logo-wrapper {
     padding: 3px;
@@ -270,7 +231,7 @@ h6 {
 
 
 #preview-shadow {
-    background-color: var(--previewShadow);
+    background-color: var(--mainBorderColor-light);
     max-width: 300px;
     height: 180px;
     padding-left: 30px;
@@ -315,23 +276,53 @@ h6 {
 /*    bottom: -5px;*/
 /*    left: -5px*/
 /*}*/
-.event {
-    border: 1px solid var(--borderColor);
-}
+
 
 .event-wrapper {
 
+    display: grid;
+    column-gap: 15px;
+    grid-template-columns: auto auto ;
+    border: 1px solid var(--mainBorderColor);
+}
+.event {
+    background: #622626;
+    border: 1px solid var(--mainBorderColor);
 
-    gap: 100px;
-    border: 1px solid var(--borderColor);
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
-.event-title {
+.dates {
     display: flex;
     justify-content: space-between;
+    padding: 5px;
+    border-top: 1px solid var(--mainBorderColor-light);
 
 }
+.description {
 
+    padding: 0 10px;
+}
+.title {
+    text-align: center;
+
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--mainBorderColor-light);
+}
+.user-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+
+
+}
+.user-profile {
+    background: #cbc8d0;
+    border: 1px solid var(--mainBorderColor);
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
 .register-btn {
 
     font-size: 20px;
@@ -535,8 +526,8 @@ h6 {
     color: #192734;
 
 
-
 }
+
 .input-disabled {
     width: 100%;
     padding: 8px 20px;
