@@ -318,10 +318,20 @@ li {
 
 }
 .user-profile {
-    background: #cbc8d0;
-    border: 1px solid var(--mainBorderColor);
-    border-radius: 5px;
+
+
+    border: 1px solid var(--mainBorderColor-light);
+    border-radius: 20px;
     margin-bottom: 15px;
+}
+.profile-pic {
+
+    width:1fr;
+    border-top-radius:20px ;
+}
+.user-name {
+    text-align: center;
+   padding: 10px;
 }
 .register-btn {
 
