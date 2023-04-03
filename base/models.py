@@ -10,7 +10,7 @@ class User(AbstractUser):
     # avatar =models.ImageField(null=True,blank=True)
 
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ["username"]
 
 
 class Event(models.Model):
