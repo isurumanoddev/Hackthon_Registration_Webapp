@@ -138,13 +138,10 @@ li {
 }
 
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-/*.dropdown:hover .dropbtn {background-color: #3e8e41;}*/
 
 .s1 {
     background-color: var(--mainBgColor-dark);
@@ -255,28 +252,6 @@ li {
     position: absolute;
 }
 
-/*#corner-tl {*/
-/*    top: -5px;*/
-/*    left: -5px*/
-/*}*/
-
-/*#corner-tr {*/
-/*    top: -5px;*/
-/*    right: -5px*/
-/*}*/
-
-
-/*#corner-br {*/
-/*    bottom: -5px;*/
-/*    right: -5px*/
-/*}*/
-
-
-/*#corner-bl {*/
-/*    bottom: -5px;*/
-/*    left: -5px*/
-/*}*/
-
 
 .event-wrapper {
 
@@ -341,7 +316,6 @@ li {
     margin: auto;
     height: 90px;
     width: 90px;
-    /*justify-content: center;*/
     display: block;
     border-radius: 50%;
     object-fit: cover;
@@ -362,17 +336,7 @@ li {
     min-width: 150px;
     width: fit-content;
     background: steelblue;
-    /*color: black;*/
 
-    /*width: 100%;*/
-    /*margin: 10px 20px;*/
-    /*color: #000000;*/
-    /*background-color: var(--button-bg);*/
-    /*border: none;*/
-    /*padding: 7px 0;*/
-    /*text-align: center;*/
-    /*text-space: 10px;*/
-    /*border-radius: 15px;*/
 }
 
 .alert {
