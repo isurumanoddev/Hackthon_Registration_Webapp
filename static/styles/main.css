@@ -261,6 +261,7 @@ li {
 .event-wrapper {
 
     display: grid;
+
     column-gap: 15px;
     grid-template-columns: auto auto;
 
@@ -293,10 +294,14 @@ li {
 }
 
 .description {
+    min-height: 150px;
+    height: fit-content;
+    padding: 0 10px;
+}
+.description-1 {
 
     padding: 0 10px;
 }
-
 .title {
     text-align: center;
 
@@ -424,6 +429,7 @@ li {
     border: 1px solid #ccc;
     border-radius: 4px;
     pointer-events: none;
+    color: #192734;
 
 
 }
