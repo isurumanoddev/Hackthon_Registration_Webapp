@@ -5,7 +5,6 @@ from base.models import User, Event, Submission
 from base.forms import CreateUserForm, SubmissionForm
 
 
-
 def home(request):
     participants = User.objects.all()
 
@@ -55,15 +54,16 @@ def user_logout(request):
     return redirect("home")
 
 
-@login_required(login_url="login")
+# @login_required(login_url="login")
 def event_page(request, pk):
     event = Event.objects.get(id=pk)
     participants = event.participants.all()
-
+    registered = False
+    submitted = False
     user = request.user
-
-    registered = user.event_set.filter(id=event.id).exists()
-    submitted = Submission.objects.filter(participant=request.user, event=event).exists()
+    if request.user.is_authenticated:
+        registered = user.event_set.filter(id=event.id).exists()
+        submitted = Submission.objects.filter(participant=request.user, event=event).exists()
 
     context = {"event": event, "participants": participants, "registered": registered, "submitted": submitted}
     return render(request, "event_page.html", context)
@@ -85,8 +85,9 @@ def event_registration(request, pk):
 
 
 @login_required(login_url="login")
-def user_profile(request):
-    user = request.user
+def user_profile(request,pk):
+
+    user = User.objects.get(id=pk)
 
     registered_events = user.event_set.all()
 

@@ -29,8 +29,8 @@
                             <p class="description">{{ event.description }}</p>
                             <p class="description">Registered Members : {{ event.participants.count }}</p>
                             <div class="dates">
-                                <label>Start Date : {{ event.start_date }}</label>
-                                <label>Deadline : {{ event.end_date }}</label>
+                                <label>Start Date : {{ event.start_date|date }}</label>
+                                <label>Deadline : {{ event.end_date|date }}</label>
                             </div>
 
 
@@ -50,7 +50,7 @@
                 {% for user in participants %}
 
                     <div class="user-profile">
-                        <img class="profile-pic" src="">
+                        <img class="profile-pic" src="{{ user.imageURL }}">
                         <h4 class="user-name" >{{ user.name }}</h4>
                     </div>
 

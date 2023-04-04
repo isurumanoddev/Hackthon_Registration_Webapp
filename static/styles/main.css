@@ -282,8 +282,16 @@ li {
 
     display: grid;
     column-gap: 15px;
-    grid-template-columns: auto auto ;
-    border: 1px solid var(--mainBorderColor);
+    grid-template-columns: auto auto;
+
+}
+.event-page {
+    padding: 10px;
+}
+.users {
+    padding: 15px;
+    border-color: var(--mainBorderColor-light);
+
 }
 .event {
     background: #622626;
@@ -300,68 +308,79 @@ li {
     border-top: 1px solid var(--mainBorderColor-light);
 
 }
+
 .description {
 
     padding: 0 10px;
 }
+
 .title {
     text-align: center;
 
     padding-bottom: 10px;
     border-bottom: 1px solid var(--mainBorderColor-light);
 }
+
 .user-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     column-gap: 20px;
 
 
 }
+
 .user-profile {
     border: 1px solid var(--mainBorderColor-light);
     border-radius: 20px;
     margin-bottom: 15px;
+
+    max-height: 150px;
 }
+
 .profile-pic {
-    justify-content: center;
+    margin: auto;
+    height: 90px;
+    width: 90px;
+    /*justify-content: center;*/
     display: block;
     border-radius: 50%;
+    object-fit: cover;
+    padding-top: 5px;
 
-    padding: 10px;
 }
+
 .user-name {
     text-align: center;
-   padding: 5px;
-}
-.register-btn {
-
+    padding: 5px ;
     font-size: 20px;
-    font-family: 'Russo One', sans-serif;
 
-    width: 100%;
-    margin: 10px 20px;
-    color: #000000;
-    background-color: var(--buttonColor);
-    border: none;
-    padding: 7px 0;
-    text-align: center;
-    text-space: 10px;
-    border-radius: 15px;
 }
 
-.registered {
+.btn-secondary {
+    margin: 5px;
+    font-family: "Readex Pro", serif;
+    min-width: 150px;
+    width: fit-content;
+    background: steelblue;
+    /*color: black;*/
 
-    font-size: 20px;
-    font-family: 'Russo One', sans-serif;
-    width: 100%;
-    margin: 10px 20px;
-    color: #010309;
-    background-color: red;
-    border: none;
-    padding: 7px 0;
-    text-align: center;
-    text-space: 10px;
-    border-radius: 15px;
+    /*width: 100%;*/
+    /*margin: 10px 20px;*/
+    /*color: #000000;*/
+    /*background-color: var(--button-bg);*/
+    /*border: none;*/
+    /*padding: 7px 0;*/
+    /*text-align: center;*/
+    /*text-space: 10px;*/
+    /*border-radius: 15px;*/
+}
+
+.alert {
+    margin: 5px;
+    padding: 5px 15px;
+    background-color: #198754;
+    color: white;
+
 }
 
 .event-participants {
@@ -601,7 +620,7 @@ li {
     padding-bottom: 7px;
     color: #fff;
     font-weight: bolder;
-    background-color: var(--buttonColor);
+    background-color: var(--mainLinkColor-light);
     border: none;
 }
 
