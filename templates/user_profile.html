@@ -8,28 +8,17 @@
 
     <section class="s1">
         <div class="main-container">
-            <div class="intro-wrapper">
-                <div class="greeting-wrapper">
+            <div class="profile">
+                <div class="left-column">
+                    <div class="profile-picture">
 
-                    <div class="left-column">
-                        <h2> {{ request.user.name }} </h2>
-                        <img id="profile_pic"
-                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxE_Q-OIHewjpZPVHcDIRWXFMRjJaRqyp_1g&usqp=CAU">
                     </div>
-
-                    <div class="right-column">
-                        <div id="preview-shadow">
-                            <div id="preview">
-                                <h3>What I Do</h3>
-                                <p>{{ user.bio }}</p>
-                            </div>
-                        </div>
-                    </div>
-
+                </div>
+                <div class="right-column">
 
                 </div>
-
             </div>
+
         </div>
 
     </section>
@@ -41,16 +30,16 @@
 
             <h4 style="text-align: center;padding: 20px"> My Registered Events</h4>
 
-                <div class="event-page">
-                    {% for event in registered_events %}
-                        <div class="event">
-                            <h4>{{ event.name }}</h4>
+            <div class="event-page">
+                {% for event in registered_events %}
+                    <div class="event">
+                        <h4>{{ event.name }}</h4>
 
-{#                            <label> Date : {{ event.c|date }} </label>#}
+                        {#                            <label> Date : {{ event.c|date }} </label>#}
 
-                        </div>
-                    {% endfor %}
-                </div>
+                    </div>
+                {% endfor %}
+            </div>
 
 
         </div>
