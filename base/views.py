@@ -2,7 +2,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from base.models import User, Event, Submission
-from base.forms import CreateUserForm, SubmissionForm
+from base.forms import *
 
 
 def home(request):
@@ -85,8 +85,7 @@ def event_registration(request, pk):
 
 
 @login_required(login_url="login")
-def user_profile(request,pk):
-
+def user_profile(request, pk):
     user = User.objects.get(id=pk)
 
     registered_events = user.event_set.all()
@@ -96,6 +95,18 @@ def user_profile(request,pk):
 
     context = {"user": user, "registered_events": registered_events, "submitted_events": submitted_events}
     return render(request, "user_profile.html", context)
+
+
+def user_update(request, pk):
+    user = User.objects.get(id=pk)
+    form = UserUpdateForm(instance=user)
+    if request.method == "POST":
+        form = UserUpdateForm(request.POST,request.FILES, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect("user-profile", pk=user.id)
+    context = {"user": user, "form": form}
+    return render(request, "user_form.html", context)
 
 
 @login_required(login_url="login")

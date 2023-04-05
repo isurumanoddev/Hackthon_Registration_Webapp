@@ -12,10 +12,13 @@
                 <div class="left-column">
                     <div class="profile-picture">
 
+                        <img  src="{{ user.imageURL }}" alt="Paris" >
                     </div>
+
                 </div>
                 <div class="right-column">
-
+                    <a href="{% url "user-update" user.id %}" class="btn btn-warning">Edit</a>
+                    <a  class="btn btn-warning">Reset Password</a>
                 </div>
             </div>
 
@@ -38,6 +41,8 @@
                         {#                            <label> Date : {{ event.c|date }} </label>#}
 
                     </div>
+                    {% empty %}
+                    <p class="alert">You dont have any Submissions yet</p>
                 {% endfor %}
             </div>
 
@@ -63,6 +68,8 @@
                         <label> Submitted Date : {{ submission.submitted_date|date }} </label>
 
                     </div>
+                    {% empty %}
+                    <p class="alert">You dont have any registered events yet</p>
                 {% endfor %}
             </div>
 
