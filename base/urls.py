@@ -1,10 +1,10 @@
 from django.urls import path
 from django.urls import path
-
+from django.contrib.auth import views as auth_views
 from base import views
 
 urlpatterns = [
-    path('',views.home , name="home" ),
+    path('', views.home, name="home"),
     path('user_register/', views.user_register, name="register"),
     path('user_login/', views.user_login, name="login"),
     path('user_logout/', views.user_logout, name="logout"),
@@ -17,4 +17,6 @@ urlpatterns = [
     path('event_registration/<str:pk>', views.event_registration, name="event-registration"),
     path('event_submission/<str:pk>', views.event_submission, name="event-submission"),
     path('update_submission/<str:pk>', views.update_submission, name="update-submission"),
+
+
 ]

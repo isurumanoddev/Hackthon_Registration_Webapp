@@ -510,6 +510,9 @@ li {
     background-color: var(--mainLinkColor-light);
     border: none;
 }
+.forgot-password {
+    color: #b6b6cb;
+}
 
 .confirm-box {
     display: flex;
