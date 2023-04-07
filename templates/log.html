@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Isuru Manod</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+
+
+    <link rel="stylesheet" type="text/css" href="log.css">
+    {#	<link rel="stylesheet" type="text/css" href="{% static "styles/blue.css" %}">#}
+    	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap"
+	      rel="stylesheet">
+
+</head>
+<body>
+
+{% block content %}
+    <div class="overlay">
+
+        <form>
+
+            <div class="con">
+
+                <header class="head-form">
+                    <h2>Log In</h2>
+
+                    <p>login here using your username and password</p>
+                </header>
+
+                <br>
+                <div class="field-set">
+
+                    <span class="input-item">
+                        <i class="fa fa-user-circle"></i>
+                    </span>
+
+                    <input class="form-input" id="txt-input" type="text" placeholder="@UserName" required>
+
+                    <br>
+
+
+                    <span class="input-item">
+                        <i class="fa fa-key"></i>
+                    </span>
+
+                    <input class="form-input" type="password" placeholder="Password" id="pwd" name="password" required>
+
+
+                    <span>
+                        <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
+                    </span>
+
+                    <br>
+
+                    <button class="log-in"> Log In</button>
+                </div>
+
+
+                <div class="other">
+
+                    <button class="btn submits frgt-pass">Forgot Password</button>
+
+                    <button class="btn submits sign-up">Sign Up
+
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+        </form>
+    </div>
+
+
+
+
+    {#	<script type="text/javascript" src="{% static "js/script.js" %}"></script>#}
+
+
+{% endblock %}
+</body>
+</html>

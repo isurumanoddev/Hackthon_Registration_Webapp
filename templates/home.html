@@ -4,38 +4,96 @@
 
 
 {% block content %}
-
-
-    <section class="s1">
-        <div class="main-container">
-            <div class="intro-wrapper">
-                <div class="greeting-wrapper">
-                    <h1>Welcome {{ request.user.name }} !</h1>
-                </div>
-            </div>
+        <!-- header section start -->
+    <div class="header_section">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="trainings.html">TRAININGS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="classes.html">CLASSES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shows.html">SHOWS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shortcodes.html">SHORTCODES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">CONTACT</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <div class="search_icon"><a href="#"><img src="images/search-icon.png"></a></div>
+          </form>
         </div>
-    </section>
+      </nav>
+    </div>
+    <!-- header section end -->
 
+    <div class="landing-page">
+        <div class="container">
+
+            <div class="info">
+                <h1>Looking For Inspiration</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit nihil ullam nesciunt quidem
+                    iste, Repellendus odit nihil</p>
+                <button>Button name</button>
+            </div>
+            <div class="image">
+                <img src="https://i.postimg.cc/65QxYYzh/001234.png">
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <!-- End Landing Page -->
+
+
+    <!-- About End -->
     <section class="s2">
         <div class="main-container">
 
             <h3 style="text-align: center;padding: 20px">Events</h3>
 
             <div class="event-wrapper">
+
                 {% for event in events %}
-                    <a href="{% url "event-page" event.id %}">
-                        <div class="event">
-                            <h3 class="title">{{ event.name }}</h3>
-                            <p class="description">{{ event.description }}</p>
-                            <p class="description-1">Registered Members : {{ event.participants.count }}</p>
-                            <div class="dates">
-                                <label>Start Date : {{ event.start_date|date }}</label>
-                                <label>Deadline : {{ event.end_date|date }}</label>
+                    <div class="profile">
+                        <div class="event-left-column">
+                            <div class="event-picture">
+                                <img src="{% static "static/images/blog-2.jpg" %}">
+
+                            </div>
+                        </div>
+                        <div class="event-right-column">
+
+                            <div class="event">
+                                <a href="{% url "event-page" event.id %}">
+                                    <h3 class="title">{{ event.name }}</h3>
+                                    <p class="description">{{ event.description }}</p>
+                                    <p class="description-1">Registered Members : {{ event.participants.count }}</p>
+                                    <div class="dates">
+                                        <label>Start Date : {{ event.start_date|date }}</label>
+                                        <label>Deadline : {{ event.end_date|date }}</label>
+                                    </div>
+                                    <a class="btn btn-primary ">Read More</a>
+
+                                </a>
                             </div>
 
-
                         </div>
-                    </a>
+                    </div>
+
                 {% endfor %}
             </div>
 
@@ -51,7 +109,7 @@
 
                     <div class="user-profile">
                         <img class="profile-pic" src="{{ user.imageURL }}">
-                        <h4 class="user-name" >{{ user.name }}</h4>
+                        <h4 class="user-name">{{ user.name }}</h4>
                     </div>
 
                 {% endfor %}

@@ -12,6 +12,7 @@ class User(AbstractUser):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username"]
 
+
     def imageURL(self):
         try:
             url = self.avatar.url
