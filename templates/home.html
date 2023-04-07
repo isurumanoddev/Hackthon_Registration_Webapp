@@ -26,63 +26,7 @@
 
 
     <!-- About End -->
-    <section class="s2">
-        <div class="main-container">
 
-            <h3 style="text-align: center;padding: 20px">Events</h3>
-
-            <div class="event-wrapper">
-
-                {% for event in events %}
-                    <div class="profile">
-                        <div class="event-left-column">
-                            <div class="event-picture">
-                                <img src="{% static "static/images/blog-2.jpg" %}">
-
-                            </div>
-                        </div>
-                        <div class="event-right-column">
-
-                            <div class="event">
-                                <a href="{% url "event-page" event.id %}">
-                                    <h3 class="title">{{ event.name }}</h3>
-                                    <p class="description">{{ event.description }}</p>
-                                    <p class="description-1">Registered Members : {{ event.participants.count }}</p>
-                                    <div class="dates">
-                                        <label>Start Date : {{ event.start_date|date }}</label>
-                                        <label>Deadline : {{ event.end_date|date }}</label>
-                                    </div>
-                                    <a class="btn btn-primary ">Read More</a>
-
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                {% endfor %}
-            </div>
-
-        </div>
-    </section>
-    <section class="s1">
-        <div class="main-container">
-
-            <h3 style="text-align: center;padding: 20px">Users</h3>
-
-            <div class="user-list">
-                {% for user in participants %}
-
-                    <div class="user-profile">
-                        <img class="profile-pic" src="{{ user.imageURL }}">
-                        <h4 class="user-name">{{ user.name }}</h4>
-                    </div>
-
-                {% endfor %}
-            </div>
-
-        </div>
-    </section>
 
     <section class="s1">
         <div class="event-container">
@@ -92,9 +36,9 @@
                      <img class="img-thumbnail p-3" src="{% static "static/images/about.jpg" %}" alt="">
                 </div>
                 <div class="r-column">
-                    <small class="small">Who We Are</small>
-                    <h1 class="event-title">Most Effective Creative Service Provider For Companies</h1>
-                    <p class="event-des">Eirmod est dolor nonumy sea amet dolore erat sit dolor et dolor vero. Tempor ipsum at justo amet at ipsum justo. Aiam kasd sea sit dolor duo elitr dolor amet, justo est ipsum amet dolor ut ipsum. Labore diam et nonumy amet dolores. Volup sit labore dolores erat, magna justo sed lorem kasd ea dolor. Labore sit clita invidunt, est dolores lorem sed ipsum kasd no amet ipsum.</p>
+                    <small class="small">big prizes</small>
+                    <h1 class="event-title">{{ event.name }}</h1>
+                    <p class="event-des"> {{ event.description }}</p>
                          <div class="dates">
                                         <label>Start Date : {{ event.start_date|date }}</label>
                                         <label>Deadline : {{ event.end_date|date }}</label>
