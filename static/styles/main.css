@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --mainTextColor:#000;
-    --secondaryTextColor:rgb(51 51 51);
-    --mainLinkColor:#0da2b8;
-    --mainBorderColor:rgb(218, 218, 218);
-    --mainBgColor:rgb(249, 250,251);
-
+    --mainTextColor: #000;
+    --secondaryTextColor: rgb(51 51 51);
+    --mainLinkColor: #0da2b8;
+    --mainBorderColor: rgb(218, 218, 218);
+    --mainBgColor: rgb(249, 250, 251);
 
 
 }
@@ -81,7 +80,6 @@ li {
 }
 
 
-
 .landing-page .info {
     width: 35%;
     float: left;
@@ -123,7 +121,7 @@ li {
 }
 
 .clearfix {
-  clear: both;
+    clear: both;
 }
 
 /* End Landing Page */
@@ -213,8 +211,6 @@ li {
     width: 1200px;
     margin: 0 auto;
 }
-
-
 
 
 #navigation a {
@@ -346,6 +342,7 @@ li {
     border-color: var(--mainBorderColor);
 
 }
+
 .event-left-column {
     flex-basis: 40%;
 
@@ -360,7 +357,7 @@ li {
 
     border: 2px solid #ccc;
 
-     padding: 15px;
+    padding: 15px;
 }
 
 .event {
@@ -396,16 +393,17 @@ li {
     padding-bottom: 10px;
 
 }
+
 .btn-primary {
     margin-bottom: 10px;
 }
+
 .event-picture {
 
 
     display: flex;
 
     justify-content: center;
-
 
 
 }
@@ -419,6 +417,7 @@ li {
 
 
 }
+
 .user-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -681,3 +680,80 @@ li {
 
 }
 
+
+
+.event-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.event-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.l-column {
+  width: 40%;
+  margin-right: 50px;
+}
+
+.l-column img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.r-column {
+  width: 60%;
+}
+
+.small {
+  font-size: 14px;
+  color: #4285f4;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.event-title {
+  font-size: 48px;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.event-des {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.button {
+  display: inline-block;
+  background-color: #4285f4;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 20px 40px;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #3367d6;
+}

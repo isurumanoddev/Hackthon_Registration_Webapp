@@ -4,41 +4,7 @@
 
 
 {% block content %}
-        <!-- header section start -->
-    <div class="header_section">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="trainings.html">TRAININGS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="classes.html">CLASSES</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="shows.html">SHOWS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="shortcodes.html">SHORTCODES</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">CONTACT</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <div class="search_icon"><a href="#"><img src="images/search-icon.png"></a></div>
-          </form>
-        </div>
-      </nav>
-    </div>
-    <!-- header section end -->
+
 
     <div class="landing-page">
         <div class="container">
@@ -118,7 +84,27 @@
         </div>
     </section>
 
-
+    <section class="s1">
+        <div class="event-container">
+             {% for event in events %}
+            <div class="event-box">
+                <div class="l-column">
+                     <img class="img-thumbnail p-3" src="{% static "static/images/about.jpg" %}" alt="">
+                </div>
+                <div class="r-column">
+                    <small class="small">Who We Are</small>
+                    <h1 class="event-title">Most Effective Creative Service Provider For Companies</h1>
+                    <p class="event-des">Eirmod est dolor nonumy sea amet dolore erat sit dolor et dolor vero. Tempor ipsum at justo amet at ipsum justo. Aiam kasd sea sit dolor duo elitr dolor amet, justo est ipsum amet dolor ut ipsum. Labore diam et nonumy amet dolores. Volup sit labore dolores erat, magna justo sed lorem kasd ea dolor. Labore sit clita invidunt, est dolores lorem sed ipsum kasd no amet ipsum.</p>
+                         <div class="dates">
+                                        <label>Start Date : {{ event.start_date|date }}</label>
+                                        <label>Deadline : {{ event.end_date|date }}</label>
+                                    </div>
+                    <a href="" class="button">Read More</a>
+                </div>
+            </div>
+{% endfor %}
+        </div>
+    </section>
 
 
 
