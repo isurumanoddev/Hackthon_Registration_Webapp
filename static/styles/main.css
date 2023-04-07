@@ -201,7 +201,75 @@ li {
     margin-right: 10px;
 }
 
+/*
+   */
+.container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 50px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
 
+    /* Set info text properties */
+    .info {
+        flex: 1 1 40%;
+        margin-right: 20px;
+    }
+
+    .info h1 {
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .info p {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.5;
+        margin-bottom: 40px;
+    }
+
+    /* Set button properties */
+    button {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 24px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 50px;
+        background-color: #3498db;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #2980b9;
+    }
+
+    /* Set image properties */
+    .image {
+        flex: 1 1 50%;
+    }
+
+    .image img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Add clearfix for the container */
+    .clearfix {
+        clear: both;
+    }
 
 
 .s1 {
@@ -222,33 +290,6 @@ li {
     margin: 0 auto;
 }
 
-
-#navigation a {
-    color: var(--secondaryTextColor);
-}
-
-
-#navigation {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    padding: 10px;
-    margin-right: 50px;
-}
-
-#navigation li {
-    display: inline-block;
-    margin-right: 5px;
-    margin-left: 5px;
-    padding: 0 25px;
-}
-
-
-.logo-wrapper {
-    padding: 3px;
-    margin-left: 15px;
-
-}
 
 
 #profile_pic {
