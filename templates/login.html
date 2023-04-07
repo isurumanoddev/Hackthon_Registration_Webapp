@@ -5,33 +5,32 @@
 
 {% block content %}
 
-	<section class="s2">
-		<div class="main-container">
-			<a href=""></a>
-			<h3 style="text-align: center;padding: 20px">User Login</h3>
-
-			<form id="form" method="POST">
-
-				{% csrf_token %}
-				<div>
-					<label id="label">Email</label>
-				<input class="input"  name="email" type="email" >
-				</div>
-
-
-				<label id="label">Password</label>
-				<input class="input" name="password" type="password" >
-                <small><a href="{% url "password_reset" %}" class="forgot-password">Forgot Password ?</a></small>
-
-				<input id="submit-btn" type="submit" value="Send">
-				<div class="already">
-					<label id="label">If you not registered yet ,</label>
-					<a id="link" href="{% url "register" %}">Register</a>
-				</div>
-
-			</form>
-		</div>
-	</section>
+    <section class="s2">
+  <div class="main-container">
+    <h3 style="text-align: center; padding: 20px;">User Login</h3>
+    <div class="form-container">
+      <form id="form" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" id="password" required>
+          <a href="{% url "password_reset" %}" class="forgot-password">Forgot Password?</a>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </div>
+        <div class="already">
+          <label class="form-label">If you're not registered yet,</label>
+          <a href="{% url "register" %}" class="form-link">Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
 
 {% endblock %}

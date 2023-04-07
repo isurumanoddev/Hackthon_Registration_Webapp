@@ -43,7 +43,7 @@
                                         <label>Start Date : {{ event.start_date|date }}</label>
                                         <label>Deadline : {{ event.end_date|date }}</label>
                                     </div>
-                    <a href="" class="button">Read More</a>
+                    <a href="{% url "event-page" event.id %}" class="button">Read More</a>
                 </div>
             </div>
 {% endfor %}

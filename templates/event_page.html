@@ -8,58 +8,44 @@
 
 
 
-    <section class="s2">
-        <div class="main-container">
-            <div style="margin-top: 15px">
-
-                <a href="{% url "home" %}" class="btn-links">Back</a>
+    <section class="event-page">
+        <div class="event-picture">
+            <img src="{% static "static/images/Hackathon-Logo.png" %}" alt="Event Picture">
+        </div>
+        <div class="event-details">
+            <a href="{% url "home" %}" class="btn-links">Back</a>
+            <h2 class="event-title">{{ event.name }}</h2>
+            <div class="registration-status">
+                {% if registered %}
+                    <div class="alert alert-registered">Already Registered</div>
+                {% else %}
+                    <a href="{% url "event-registration" event.id %}" class="btn btn-secondary">Register</a>
+                {% endif %}
+                {% if submitted %}
+                    <div class="alert alert-submitted">Already submitted</div>
+                {% else %}
+                    <a href="{% url "event-submission" event.id %}" class="btn btn-secondary">Submission</a>
+                {% endif %}
             </div>
-
-            <h2 style="text-align: center;padding: 20px">{{ event.name }}</h2>
-
-            <div class="event-page">
-                <div class="event">
-
-                    <div class="event-title">
-                        {% if registered %}
-                            <div class="alert">Already Registred</div>
-                        {% else %}
-                            <a href="{% url "event-registration" event.id %}"
-                               class="btn btn-secondary">Register </a>
-                        {% endif %}
-                        {% if submitted %}
-                            <p class="alert ">Already submitted</p>
-                        {% else %}
-                            <a href="{% url "event-submission" event.id %}" class="btn btn-secondary"> Submission</a>
-                        {% endif %}
-                    </div>
-                    <p class="description">{{ event.description }}</p>
-                    <p class="description-1">Registered Members : {{ event.participants.count }}</p>
-                    <div class="dates">
-                        <label>Start Date : {{ event.start_date|date }}</label>
-                        <label>Deadline : {{ event.end_date|date }}</label>
-                    </div>
-
-                </div>
-                <div class="main-container">
-                    <div class="user-list">
-                        {% for user in participants %}
-                            <a href="{% url "user-profile" user.id  %}">
-                                <div class="user-profile">
-                                    <img class="profile-pic" src="{{ user.imageURL }}">
-                                    <h4 class="user-name">{{ user.name }}</h4>
-                                </div>
-                            </a>
-
-                        {% endfor %}
-                    </div>
-                </div>
-
-
+            <p class="event-description">{{ event.description }}</p>
+            <p class="event-participants">Registered Members: {{ event.participants.count }}</p>
+            <div class="event-dates">
+                <label>Start Date: {{ event.start_date|date }}</label>
+                <label>Deadline: {{ event.end_date|date }}</label>
             </div>
-
+        </div>
+        <div class="user-list">
+            {% for user in participants %}
+                <a href="{% url "user-profile" user.id %}">
+                    <div class="user-profile">
+                        <img class="profile-pic" src="{{ user.imageURL }}" alt="{{ user.name }}">
+                        <h4 class="user-name">{{ user.name }}</h4>
+                    </div>
+                </a>
+            {% endfor %}
         </div>
     </section>
+
 
 
 
