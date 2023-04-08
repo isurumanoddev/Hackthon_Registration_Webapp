@@ -156,7 +156,10 @@ li {
 }
 
 #navigation li a:hover {
-    color: #00ccff;
+    color: #f1c21b;
+    /*font-size: 19px;*/
+    font-weight: 600;
+    transition: 0.5s;
 }
 
 .dropdown {
@@ -633,6 +636,7 @@ li {
 }
 
 .event-details {
+    margin: 0 150px ;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -683,12 +687,12 @@ li {
 
 .form-container {
     width: 600px;
-    margin-top: 20px;
+    margin: auto;
     padding: 20px;
-    background-color: #f1f1f1;
+    /*text-align: center;*/
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    justify-content: center;
+
 
 }
 
@@ -699,7 +703,7 @@ li {
 .form-label {
   display: block;
   margin-bottom: 5px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
       color: #1db954;
 }
@@ -709,8 +713,8 @@ li {
   padding: 10px;
   font-size: 16px;
   border: none;
-  background-color: #282828;
-  color: #fff;
+  /*background-color: #282828;*/
+  color: #000000;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
@@ -726,6 +730,8 @@ li {
   background-color: #1db954;
   border-color: #1db954;
   color: #fff;
+    display: block;
+    width: 100%;
   font-size: 16px;
   font-weight: bold;
   padding: 10px;
@@ -749,16 +755,15 @@ li {
 
 .form-link {
 
-  text-decoration: none;
-  font-weight: bold;
-  margin-left: 5px;background-color: #1db954;
-  border-color: #1db954;
-  color: #fff;
-  font-size: 16px;
 
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+color: #1db954;
+text-decoration: underline;
+
+  font-size: 20px;
+
+
+
   transition: all 0.3s ease-in-out;
 }
 

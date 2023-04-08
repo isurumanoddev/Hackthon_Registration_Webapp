@@ -9,11 +9,12 @@
 
 
     <section class="event-page">
+    <a href="{% url "home" %}" class="btn-links">Back</a>
         <div class="event-picture">
             <img src="{% static "static/images/Hackathon-Logo.png" %}" alt="Event Picture">
         </div>
         <div class="event-details">
-            <a href="{% url "home" %}" class="btn-links">Back</a>
+
             <h2 class="event-title">{{ event.name }}</h2>
             <div class="registration-status">
                 {% if registered %}

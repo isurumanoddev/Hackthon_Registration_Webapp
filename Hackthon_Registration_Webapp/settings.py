@@ -79,10 +79,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': "TEST_1",
-        'USER':'postgres',
-        'PASSWORD':'password',
-        'HOST':'localhost',
-        'PORT':'5432'
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '5432'
 
     }
 }
@@ -120,8 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR,"static"]
-MEDIA_ROOT = os.path.join(BASE_DIR,"static/images")
+STATICFILES_DIRS = [BASE_DIR, "static"]
+MEDIA_ROOT = os.path.join(BASE_DIR, "static/images")
 MEDIA_URL = "/images/"
 
 # Default primary key field type
@@ -129,11 +129,9 @@ MEDIA_URL = "/images/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-# EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-print("EMAIL_BACKEND",EMAIL_BACKEND)
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 567
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "isurumanoddev@gmail.com"
-EMAIL_HOST_PASSWORD = "uuzumpvzgxojblfy"
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = "isurumanoddev@gmail.com"
+# EMAIL_HOST_PASSWORD = "uuzumpvzgxojblfy"
