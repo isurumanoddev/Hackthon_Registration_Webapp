@@ -18,8 +18,9 @@ urlpatterns = [
     path('event_submission/<str:pk>', views.event_submission, name="event-submission"),
     path('update_submission/<str:pk>', views.update_submission, name="update-submission"),
 
+    # path('password_reset/', auth_views.PasswordResetView.as_view(template_name=""), name="password_reset"),
     path('password_reset/', auth_views.PasswordResetView.as_view(), name="password_reset"),
     path('password_reset_sent/', auth_views.PasswordResetDoneView.as_view(), name="password_reset_done"),
-    path('reset/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
+    path('reset/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(), name="password_reset_done.html"),
     path('reset_complete/', auth_views.PasswordResetCompleteView.as_view(), name="password_reset_complete"),
 ]

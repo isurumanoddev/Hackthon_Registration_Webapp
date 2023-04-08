@@ -9,30 +9,33 @@
 
 
     <section class="event-page">
-    <a href="{% url "home" %}" class="btn-links">Back</a>
-        <div class="event-picture">
-            <img src="{% static "static/images/Hackathon-Logo.png" %}" alt="Event Picture">
-        </div>
-        <div class="event-details">
+{#        <a href="{% url "home" %}" class="btn-links">Back</a>#}
+        <div class="event-poster">
 
-            <h2 class="event-title">{{ event.name }}</h2>
-            <div class="registration-status">
-                {% if registered %}
-                    <div class="alert alert-registered">Already Registered</div>
-                {% else %}
-                    <a href="{% url "event-registration" event.id %}" class="btn btn-secondary">Register</a>
-                {% endif %}
-                {% if submitted %}
-                    <div class="alert alert-submitted">Already submitted</div>
-                {% else %}
-                    <a href="{% url "event-submission" event.id %}" class="btn btn-secondary">Submission</a>
-                {% endif %}
+            <div class="event-picture">
+                <img src="{{ event.imageURL }}" alt="Event Picture">
             </div>
-            <p class="event-description">{{ event.description }}</p>
-            <p class="event-participants">Registered Members: {{ event.participants.count }}</p>
-            <div class="event-dates">
-                <label>Start Date: {{ event.start_date|date }}</label>
-                <label>Deadline: {{ event.end_date|date }}</label>
+            <div class="event-details">
+
+                <h2 class="event-title">{{ event.name }}</h2>
+                <div class="registration-status">
+                    {% if registered %}
+                        <div class="alert alert-registered">Already Registered</div>
+                    {% else %}
+                        <a href="{% url "event-registration" event.id %}" class="btn btn-secondary">Register</a>
+                    {% endif %}
+                    {% if submitted %}
+                        <div class="alert alert-submitted">Already submitted</div>
+                    {% else %}
+                        <a href="{% url "event-submission" event.id %}" class="btn btn-secondary">Submission</a>
+                    {% endif %}
+                </div>
+                <p class="event-description">{{ event.description }}</p>
+                <p class="event-participants">Registered Members: {{ event.participants.count }}</p>
+                <div class="event-dates">
+                    <label>Start Date: {{ event.start_date|date }}</label>
+                    <label>Deadline: {{ event.end_date|date }}</label>
+                </div>
             </div>
         </div>
         <div class="user-list">

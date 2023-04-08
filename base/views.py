@@ -18,7 +18,7 @@ def home(request):
 
 def user_register(request):
     form = CreateUserForm()
-    email = request.POST.get("email")
+
     if request.method == "POST":
         form = CreateUserForm(request.POST)
         if form.is_valid():
@@ -28,7 +28,7 @@ def user_register(request):
             subject = "Hackathon Registration Notice"
             message = f'Hi {user.username}, thank you for registering in Hackathon.'
             email_from = settings.EMAIL_HOST_USER
-            recipient_list = ["isuruman1999@gmail.com"]
+            recipient_list = ["isurumanod99@gmail.com"]
             send_mail(subject, message, email_from, recipient_list)
 
             login(request,user)

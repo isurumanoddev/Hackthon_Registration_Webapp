@@ -32,6 +32,6 @@ class SubmissionForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(SubmissionForm, self).__init__(*args, **kwargs)
 
-        self.fields["event"].widget.attrs.update({'class': 'input'})
-        self.fields["participant"].widget.attrs.update({'class': 'input-disabled'})
-        self.fields["details"].widget.attrs.update({'class': 'text-area'})
+        self.fields["event"].widget.attrs.update({'class': 'form-control'})
+        self.fields["participant"].widget.attrs.update({'class': 'form-control-disabled'})
+        self.fields["details"].widget.attrs.update({'class': 'form-control'})

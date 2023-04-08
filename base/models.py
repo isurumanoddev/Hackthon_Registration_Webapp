@@ -30,10 +30,19 @@ class Event(models.Model):
     end_date = models.DateTimeField(null=True,blank=True)
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now_add=True)
+    poster = models.ImageField(default="Hackathon-Logo.png")
 
     def __str__(self):
 
         return self.name
+
+    def imageURL(self):
+        try:
+            url = self.poster.url
+        except:
+            url = ""
+
+        return url
 
 
 class Submission(models.Model):

@@ -33,7 +33,7 @@
              {% for event in events %}
             <div class="event-box">
                 <div class="l-column">
-                     <img class="img-thumbnail p-3" src="{% static "static/images/about.jpg" %}" alt="">
+                     <img class="img-thumbnail p-3" src="{{ event.imageURL }}" alt="">
                 </div>
                 <div class="r-column">
                     <small class="small">big prizes</small>
