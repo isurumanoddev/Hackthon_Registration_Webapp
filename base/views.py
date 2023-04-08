@@ -1,5 +1,7 @@
+from django.conf import settings
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from base.models import User, Event, Submission
 from base.forms import *
@@ -16,12 +18,20 @@ def home(request):
 
 def user_register(request):
     form = CreateUserForm()
+    email = request.POST.get("email")
     if request.method == "POST":
         form = CreateUserForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
             user.save()
-            login(request, user)
+
+            subject = "Hackathon Registration Notice"
+            message = f'Hi {user.username}, thank you for registering in Hackathon.'
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = ["isuruman1999@gmail.com"]
+            send_mail(subject, message, email_from, recipient_list)
+
+            login(request,user)
             return redirect("home")
 
     context = {"form": form}
@@ -101,7 +111,7 @@ def user_update(request, pk):
     user = User.objects.get(id=pk)
     form = UserUpdateForm(instance=user)
     if request.method == "POST":
-        form = UserUpdateForm(request.POST,request.FILES, instance=user)
+        form = UserUpdateForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
             return redirect("user-profile", pk=user.id)
@@ -137,4 +147,4 @@ def update_submission(request, pk):
 
 def password_reset(request):
     context = {}
-    return render(request,"password_reset.html",context)
+    return render(request, "password_reset.html", context)

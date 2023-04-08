@@ -7,18 +7,18 @@ from base.models import User, Submission
 class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ["name", "email", "password1", "password2", ]
+        fields = ["username", "email", "password1", "password2", ]
 
 class UserUpdateForm(ModelForm):
     class Meta:
         model = User
-        fields = ["email","name","bio","avatar"]
+        fields = ["email","username","bio","avatar"]
 
     def __init__(self, *args, **kwargs):
         super(UserUpdateForm, self).__init__(*args, **kwargs)
 
         self.fields["email"].widget.attrs.update({'class': 'input'})
-        self.fields["name"].widget.attrs.update({'class': 'input'})
+        self.fields["username"].widget.attrs.update({'class': 'input'})
         self.fields["bio"].widget.attrs.update({'class': 'text-area'})
         self.fields["avatar"].widget.attrs.update({'class': 'input'})
 
