@@ -17,10 +17,10 @@ class UserUpdateForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(UserUpdateForm, self).__init__(*args, **kwargs)
 
-        self.fields["email"].widget.attrs.update({'class': 'input'})
-        self.fields["username"].widget.attrs.update({'class': 'input'})
-        self.fields["bio"].widget.attrs.update({'class': 'text-area'})
-        self.fields["avatar"].widget.attrs.update({'class': 'input'})
+        self.fields["email"].widget.attrs.update({'class': 'form-control'})
+        self.fields["username"].widget.attrs.update({'class': 'form-control'})
+        self.fields["bio"].widget.attrs.update({'class': 'form-control-textarea'})
+        self.fields["avatar"].widget.attrs.update({'class': 'form-control'})
 
 
 class SubmissionForm(ModelForm):

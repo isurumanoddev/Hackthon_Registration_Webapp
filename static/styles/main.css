@@ -284,6 +284,13 @@ button:hover {
     border-bottom: 1px solid var(--mainBorderColor);
     overflow: auto;
 }
+.event-container{
+    background-color: var(--mainBgColor);
+    border-bottom: 1px solid var(--mainBorderColor);
+    width: 1200px;
+    display: flex;
+    flex-direction:row ;
+}
 
 
 .main-container {
@@ -293,15 +300,7 @@ button:hover {
     align-items: center;
 }
 
-#profile_pic {
-    display: block;
-    margin: 0 auto;
 
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    border: 2px solid var(--mainBorderColor);
-}
 
 .profile {
     display: flex;
@@ -314,7 +313,7 @@ button:hover {
     flex-basis: 25%;
 
 
-    border: 2px solid #ccc;
+    /*border: 2px solid #ccc;*/
 
     padding-top: 50px;
     padding-bottom: 50px;
@@ -323,7 +322,7 @@ button:hover {
 .right-column {
     flex-basis: 75%;
 
-    border: 2px solid #ccc;
+    /*border: 2px solid #ccc;*/
 
     padding-top: 50px;
     padding-bottom: 50px;
@@ -345,20 +344,10 @@ button:hover {
     object-fit: cover;
     max-width: 100%;
     max-height: 100%;
-    border: 5px solid #fff;
+    /*border: 5px solid #fff;*/
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 
 
-}
-
-
-.corner {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    border: 1.5px solid #17a2b8;
-    background-color: #fff;
-    position: absolute;
 }
 
 
@@ -422,7 +411,7 @@ button:hover {
 }
 
 .event-participants {
-    margin-left: 20px;
+    /*margin-left: 20px;*/
 }
 
 
@@ -560,7 +549,7 @@ button:hover {
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
 
@@ -590,7 +579,7 @@ button:hover {
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
 
     padding: 20px;
     background-color: #f5f5f5;
@@ -680,6 +669,17 @@ button:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     pointer-events: none;
 }
+.form-control-textarea {
+     width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    /*background-color: #282828;*/
+    color: #000000;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    height: 150px;
+}
 .forgot-password {
     display: block;
     margin-top: 5px;
@@ -729,4 +729,15 @@ button:hover {
 
 .form-link:hover {
     color: #1ed760;
+}
+
+.registered {
+
+    flex-basis: 50%;
+    padding: 20px 10px;
+}
+.submitted {
+
+    flex-basis: 50%;
+    padding: 20px 10px;
 }

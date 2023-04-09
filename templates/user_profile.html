@@ -12,13 +12,22 @@
                 <div class="left-column">
                     <div class="profile-picture">
 
-                        <img  src="{{ user.imageURL }}" alt="Paris" >
+                        <img src="{{ user.imageURL }}" alt="Paris">
                     </div>
 
                 </div>
                 <div class="right-column">
-                    <a href="{% url "user-update" user.id %}" class="btn btn-warning">Edit</a>
-                    <a href="{% url "password_reset" %}"  class="btn btn-warning">Reset Password</a>
+                    <div class="card-body">
+                        <a href="{% url "user-update" user.id %}" class="btn btn-warning">Edit Profile</a>
+                        <a href="{% url "password_reset" %}" class="btn btn-warning">Reset Password</a>
+
+
+                        <p class="card-title" >Name : {{ user.username }}</p>
+                        <p class="card-title" >Email : {{ user.email }}</p>
+                        <p class="card-title" >Bio : {{ user.bio }}</p>
+
+                    </div>
+
                 </div>
             </div>
 
@@ -28,37 +37,35 @@
 
 
 
-    <section class="s2">
-        <div class="main-container">
 
-            <h4 style="text-align: center;padding: 20px"> My Registered Events</h4>
 
-            <div class="event-page">
+    <div class="event-container">
+        <div class="registered">
+            <h4 class="event-title" style="text-align: center">Registered events</h4>
+
+            <div class="card">
                 {% for event in registered_events %}
-                    <div class="event">
-                        <h4>{{ event.name }}</h4>
-
-                        {#                            <label> Date : {{ event.c|date }} </label>#}
+                    <div class="card-body">
+                        <div class="">
+                            <h4>{{ event.name }}</h4>
+                            <a style="max-width: 400px" href=""
+                               class="btn btn-secondary">Event Unroll</a>
+                        </div>
+                        <label> Date : {{ event.c|date }} </label>
 
                     </div>
-                    {% empty %}
+                {% empty %}
                     <p class="alert">You dont have any Submissions yet</p>
                 {% endfor %}
             </div>
-
-
         </div>
-    </section>
+        <div class="submitted">
+            <h4 class="event-title" style="text-align: center">Submitted events</h4>
 
-    <section class="s1">
-        <div class="main-container">
-
-            <h4 style="text-align: center;padding: 20px"> Submitted Events</h4>
-
-            <div class="event-page">
+            <div class="card">
                 {% for submission in submitted_events %}
-                    <div class="event">
-                        <div class="update-box">
+                    <div class="card-body">
+                        <div class="">
                             <h4>{{ submission.event.name }}</h4>
                             <a style="max-width: 400px" href="{% url "update-submission" submission.id %}"
                                class="btn btn-secondary">Update Submission</a>
@@ -68,14 +75,13 @@
                         <label> Submitted Date : {{ submission.submitted_date|date }} </label>
 
                     </div>
-                    {% empty %}
+                {% empty %}
                     <p class="alert">You dont have any registered events yet</p>
                 {% endfor %}
             </div>
-
         </div>
-    </section>
 
+    </div>
 
 
 {% endblock %}

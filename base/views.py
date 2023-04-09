@@ -143,8 +143,3 @@ def update_submission(request, pk):
             return redirect("user-profile")
     context = {"form": form}
     return render(request, "submission_form.html", context)
-
-
-def password_reset(request):
-    context = {}
-    return render(request, "password_reset.html", context)

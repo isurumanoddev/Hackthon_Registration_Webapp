@@ -6,7 +6,7 @@
 {% block content %}
 
 
-	<section class="s2">
+    <section class="s2">
         <div class="main-container">
             <a href=""></a>
             <h3 style="text-align: center;padding: 20px">User Profile Update</h3>
@@ -16,15 +16,18 @@
                 {% csrf_token %}
 
                 {% for field in form %}
-
-                    <label>{{ field.label }}</label>
-                    {{ field }}
+                    <div class="form-group">
+                        <label>{{ field.label }}</label>
+                        {{ field }}
+                    </div>
                 {% endfor %}
-                <input id="submit-btn" type="submit" value="Save">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Update Profile</button>
+                </div>
 
             </form>
         </div>
-	</section>
+    </section>
 
 
 
