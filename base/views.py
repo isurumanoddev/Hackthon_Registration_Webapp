@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from base.models import User, Event, Submission
 from base.forms import *
+from django.contrib import messages
 
 
 def home(request):
@@ -31,7 +32,7 @@ def user_register(request):
             recipient_list = ["isurumanod99@gmail.com"]
             send_mail(subject, message, email_from, recipient_list)
 
-            login(request,user)
+            login(request, user)
             return redirect("home")
 
     context = {"form": form}
@@ -53,6 +54,7 @@ def user_login(request):
         return redirect("home")
 
     else:
+        messages.error(request, "Login Error")
         print("Login Error")
 
     context = {}
@@ -61,6 +63,7 @@ def user_login(request):
 
 def user_logout(request):
     logout(request)
+    messages.success(request, "You logout successfully")
     return redirect("home")
 
 

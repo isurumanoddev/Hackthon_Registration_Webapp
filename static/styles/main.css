@@ -19,6 +19,26 @@
     font-family: 'Lato', 'Arial', sans-serif;
 }
 
+.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.success {
+    background-color: #3fb405;
+    border: 1px solid #020202;
+    color: #f1ecec;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 body {
     background-color: var(--mainBgColor);
 
@@ -284,12 +304,13 @@ button:hover {
     border-bottom: 1px solid var(--mainBorderColor);
     overflow: auto;
 }
-.event-container{
+
+.event-container {
     background-color: var(--mainBgColor);
     border-bottom: 1px solid var(--mainBorderColor);
     width: 1200px;
     display: flex;
-    flex-direction:row ;
+    flex-direction: row;
 }
 
 
@@ -299,7 +320,6 @@ button:hover {
     justify-content: center;
     align-items: center;
 }
-
 
 
 .profile {
@@ -658,8 +678,9 @@ button:hover {
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
+
 .form-control-disabled {
-     width: 100%;
+    width: 100%;
     padding: 10px;
     font-size: 16px;
     border: none;
@@ -669,8 +690,9 @@ button:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     pointer-events: none;
 }
+
 .form-control-textarea {
-     width: 100%;
+    width: 100%;
     padding: 10px;
     font-size: 16px;
     border: none;
@@ -680,6 +702,7 @@ button:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     height: 150px;
 }
+
 .forgot-password {
     display: block;
     margin-top: 5px;
@@ -736,8 +759,10 @@ button:hover {
     flex-basis: 50%;
     padding: 20px 10px;
 }
+
 .submitted {
 
     flex-basis: 50%;
     padding: 20px 10px;
 }
+
