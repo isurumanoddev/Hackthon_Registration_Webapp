@@ -445,48 +445,6 @@ button:hover {
 }
 
 
-@media screen and (max-width: 1200px) {
-    .main-container {
-        width: 95%;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .intro-wrapper {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-			'nav-wrapper'
-			'left-column'
-			'right-column';
-    }
-
-    .right-column {
-        justify-content: center;
-    }
-
-}
-
-@media screen and (max-width: 600px) {
-    .edu-container {
-
-        width: 100%;
-        flex-flow: column;
-        align-items: start;
-
-    }
-
-    .education-logo {
-        display: none;
-    }
-
-}
-
-@media screen and (max-width: 400px) {
-
-
-}
-
-
 .event-container {
     display: flex;
     flex-wrap: wrap;
@@ -765,4 +723,58 @@ button:hover {
     flex-basis: 50%;
     padding: 20px 10px;
 }
+
+@media screen and (max-width: 1200px) {
+    .main-container {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .event-box {
+        display: block;
+        justify-content:start;
+
+
+
+        width: 100%;
+
+        border-top: 1px black;
+
+    }
+    .l-column img {
+   display: none;
+}
+.landing-page .image {
+    display: none;
+}.event-container {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+}
+
+@media screen and (max-width: 600px) {
+      .event-box {
+        display: block;
+        justify-content:start;
+        background: red;
+        width: 100%;
+
+        border-top: 1px black;
+
+    }
+    .event-container {
+
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+}
+
+@media screen and (max-width: 400px) {
+
+
+}
+
 
